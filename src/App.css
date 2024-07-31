@@ -102,13 +102,13 @@ h1 {
 
 .incompleted {
   color: #fff;
-  cursor: pointer;
+  
 }
 
 .completed {
   color: #4f4747;
   text-decoration: line-through;
-  cursor: pointer;
+  
   font-style: italic;
 }
 
