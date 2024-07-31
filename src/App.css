@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(/Users/slabaser/Downloads/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-3840x2160-1432.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.TodoWrapper {
+  background: #263451;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
+  
+}
+
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #80C7F2;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #B7D7D8;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  
+}
+
+.todo-input::placeholder {
+  color: #929797;
+  font-style: italic;
+}
+
+.todo-btn {
+  background: #80C7F2;
+  color: #263451;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.todo-btn:hover {
+  background: #4e8eb6;
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #80C7F2;
+  color: #263451;
+  padding: 0.75rem 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+  
+}
+.fa-trash:hover{
+  color: #656b6f;
+  cursor: pointer;
+}
+.fa-pen-to-square:hover{
+  color: #656b6f;
+  cursor: pointer;
+}
+
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
+.completed {
+  color: #4f4747;
+  text-decoration: line-through;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+ .fa-thumbtack{
+  margin-right: 0.75rem;
+ }
+
+ .todo-task-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.fa-circle,
+.fa-circle-check {
+  cursor: pointer;
+}
