@@ -11,6 +11,7 @@ export const Todo = ({ task, ToggleComplete, deleteTodo, editTodo, handleSelectT
 
     <div className='Todo'>
       {selectMode && (
+      
       <input 
         type="checkbox"
         checked={isSelected}

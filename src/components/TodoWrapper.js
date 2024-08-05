@@ -152,7 +152,7 @@ export const TodoWrapper = () => {
             </button> 
         )}
         {selectMode && selectedTodos.length >0 && (
-                    <h1>{selectedTodos.length} todos selected</h1>
+                    <h3>{selectedTodos.length} todos selected</h3>
                 )}
             </div>
         {todos.map((todo, index)=> (
