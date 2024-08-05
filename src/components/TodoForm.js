@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
 
-export const TodoForm = ({ addTodo }) => {
-    const [value, setValue] = useState("");
 
-    const handleSubmit = e => {
+export const TodoForm = ({ addTodo }) => {
+    const [value, setValue] = useState(null);
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        addTodo(value);
-        setValue("");
-    };
+        if (!value) {
+            console.log("value is null")
+            return alert("value is null")
+        }
+        try {
+            addTodo(value);
+            setValue("");
+        } catch (error) {
+            console.log(error.message)
+        }
+       
+
+}
 
     return (
         <form className='TodoForm' onSubmit={handleSubmit}>
@@ -18,7 +30,7 @@ export const TodoForm = ({ addTodo }) => {
                 placeholder='What is the task today?'
                 onChange={(e) => setValue(e.target.value)}
             />
-            <button type='submit' className='todo-btn'>Add Task</button>
+            <button onClick={handleSubmit} type='submit' className='todo-btn'>Add Task</button>
         </form>
     );
 };

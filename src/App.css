@@ -16,6 +16,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .App {
@@ -34,7 +35,9 @@ h1 {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); 
-  
+  overflow-y: scroll;
+  height: 600px;
+
 }
 
 .TodoForm {
@@ -45,7 +48,7 @@ h1 {
 .todo-input {
   outline: none;
   background: none;
-  border: 1px solid #80C7F2;
+  border: 1px solid #5289B5;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -62,8 +65,12 @@ h1 {
 }
 
 .todo-btn {
-  background: #80C7F2;
-  color: #263451;
+  background: linear-gradient(
+    90deg,
+    #5289B5 0%,
+    #75a9ca 100%
+  );
+  color: #ffffff;
   border: none;
   padding: 0.55rem;
   cursor: pointer;
@@ -72,19 +79,41 @@ h1 {
 }
 
 .todo-btn:hover {
-  background: #4e8eb6;
+  background: #447c9f;
 }
 
 .Todo {
+  width: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #80C7F2;
-  color: #263451;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    #8e2f31 0%,
+    #e06466 100%
+  );
+  
   padding: 0.75rem 1rem;
   border-radius: 15px;
   margin-bottom: 1rem;
-  
+}
+
+
+.Todo:nth-child(3n + 1) {
+  background: linear-gradient(
+    90deg,
+    #437196 0%,
+    #76bae5 100%
+  );
+}
+
+.Todo:nth-child(3n + 2) {
+  background: linear-gradient(
+    90deg,
+    #5B3884 0%,
+    #7b7bea 100%
+  );
 }
 
 .fa-trash {
@@ -106,9 +135,8 @@ h1 {
 }
 
 .completed {
-  color: #4f4747;
+  color: #f6f1f1;
   text-decoration: line-through;
-  
   font-style: italic;
 }
 
@@ -124,8 +152,98 @@ h1 {
   display: flex;
   align-items: center;
   gap: 5px;
+  max-width: 70%;
+   
+}
+
+.todo-task-container p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .fa-circle,
 .fa-circle-check {
   cursor: pointer;
+}
+.todo-task-container p:hover {
+  width: 90%;
+  overflow: visible;
+  overflow-wrap: break-word;
+}
+
+.selected-todos {
+  text-align: end;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.trashcan {
+  background: none;
+  border: none;
+  color: #fff;
+  
+}
+.trashcan:disabled {
+  color: #868d92;
+}
+
+.trashcan:enabled:hover {
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.select-button {
+  background: linear-gradient(
+    90deg,
+    #436885 0%,
+    #75a9ca 100%
+  );
+  color: #ffffff;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  width: 70px;
+}
+
+.select-button:hover {
+  background: #74b5e7;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 4px solid #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox:checked {
+  background-color: #83077d;
+  border: none;
+}
+
+.custom-checkbox:checked::after {
+  content: '✔';
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.selected-todos {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.selected-todos h3 {
+  color: #fff;
+  padding-left: 17px;
 }
