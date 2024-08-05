@@ -247,3 +247,22 @@ h1 {
   color: #fff;
   padding-left: 17px;
 }
+
+@media (max-width:500px) {
+  .Todo{
+    size: 50cap;
+    width: 100%; 
+  }
+  .todo-input{
+    width: 120px;
+  }
+   .TodoWrapper{
+    size: 10px;
+    width:300px;
+   } 
+   .todo-input::placeholder {
+    color: #929797;
+    font-style: italic;
+    font-size: 7px
+  }
+}
